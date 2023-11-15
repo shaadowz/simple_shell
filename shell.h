@@ -16,5 +16,6 @@ char concat_all(char *id, char *sep, char *value);
 char *_strdup(char *str);
 void sig_handler(int sig_num);
 void _EOF(int len, char *buff);
+void _isatty(void);
 
 #endif
