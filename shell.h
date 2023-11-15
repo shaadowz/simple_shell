@@ -8,5 +8,6 @@
 void Print_prompt(void);
 int _putchar(char c);
 int _strlen(char *s);
+char concat_all(char *id, char *sep, char *value);
 
 #endif
