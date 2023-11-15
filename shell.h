@@ -6,5 +6,6 @@
 #include <unistd.h>
 
 void Print_prompt(void);
+int _putchar(char *str);
 
 #endif
