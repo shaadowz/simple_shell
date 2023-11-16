@@ -8,6 +8,11 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <errno.h>
+#include <stddef.h>
+#include <sys/stat.h>
+#include <signal.h>
+
+
 
 void _puts(char *str);
 int _putchar(char c);
