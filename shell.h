@@ -17,5 +17,7 @@ char *_strdup(char *str);
 void sig_handler(int sig_num);
 void _EOF(int len, char *buff);
 void _isatty(void);
+void print_prompt(const char *prompt);
+
 
 #endif
