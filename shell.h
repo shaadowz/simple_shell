@@ -43,4 +43,27 @@ typedef struct mybuild
 } mybuild;
 
 void my_exit(char **arv);
-#endif
+void _unsetenv(char **arv);
+void _setenv(char **arv);
+void env(char **arv __attribute__ ((unused)));
+int _atoi(char *s);
+void(*checkbuild(char **arv))(char **arv);
+
+/**
+ * struct list_path - Linked list containing PATH directories
+ * @dir: directory in path
+ * @p: pointer to next node
+ */
+
+typedef struct list_path
+{
+	char *dir;
+	struct list_path *p;
+} list_path;
+
+char *_getenv(const char *name);
+list_path *add_node_end(list_path **head, char *str);
+list_path *linkpath(char *path);
+char *_which(char *filename, list_path *head);
+
+#endif /* SHELL_H */

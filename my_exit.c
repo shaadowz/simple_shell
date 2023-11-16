@@ -12,8 +12,8 @@ void my_exit(char **arv)
 	{
 		y = _atoi(arv[1]);
 		if (y <= -1)
-			n = 2;
-		freearv(arv);
+			y = 2;
+		free(arv);
 		exit(y);
 	}
 	for (x = 0; arv[x]; x++)
