@@ -24,5 +24,23 @@ void _EOF(int len, char *buff);
 void _isatty(void);
 void print_prompt(const char *prompt);
 
+char **splitstring(char *str, const char *delim);
+void execute(char **argv);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
+extern char **environ;
+
+/**
+ * struct mybuild - points to function with same builtin caommand
+ * @name: builtin command
+ * @func: execute the builtin command
+ */
+
+typedef struct mybuild
+{
+	char *name;
+	void (*func)(char **);
+} mybuild;
+
+void my_exit(char **arv);
 #endif
