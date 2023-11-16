@@ -9,10 +9,10 @@
 #include <sys/types.h>
 #include <errno.h>
 
-void Print_prompt(void);
+void _puts(char *str);
 int _putchar(char c);
 int _strlen(char *s);
-char concat_all(char *id, char *sep, char *value);
+char *concat_all(char *name, char *sep, char *value);
 char *_strdup(char *str);
 void sig_handler(int sig_num);
 void _EOF(int len, char *buff);

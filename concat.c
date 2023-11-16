@@ -2,47 +2,60 @@
 
 /**
  * concat_all - concats three (3) strings in a newly allocated memory
- * @id: first string
+ * @name: first string
  * @sep: seconf string
  * @value: third string
  *
  * Return: Pointer to the new string
  */
 
-char concat_all(char *id, char *sep, char *value)
+char *concat_all(char *name, char *sep, char *value)
 {
-	char *outcome;
-	int x1, x2, x3, i, j;
+	size_t totalLength = 0;
+	char *result;
+	char *current;
 
-	x1 = _strlen(id);
-	x2 = _strlen(sep);
-	x3 = _strlen(value);
+	if (name != NULL) 
+		totalLength += strlen(name);
+	if (sep != NULL) 
+		totalLength += strlen(sep);
+	if (value != NULL) 
+		totalLength += strlen(value);
 
-	outcome = malloc(x1 + x2 + x3 + 1);
-	if (outcome == NULL)
+	result = (char *)malloc(totalLength + 1);
+	if (result == NULL)
 	{
 		return (NULL);
 	}
-
-	for (i = 0; id[i]; i++)
+	current = result;
+	if (name != NULL)
 	{
-		outcome[i] = id[i];
+		while (*name != '\0')
+		{
+			*current = *name;
+			current++;
+			name++;
+		}
 	}
-	j = i;
 
-	for (i = 0; sep[i]; i++)
+	if (sep != NULL)
 	{
-		outcome[j + i] = sep[i];
+		while (*sep != '\0')
+		{
+		*current = *sep;
+		current++;
+		sep++;
+		}
 	}
-	j = j + i;
-
-	for (i = 0; value[i]; i++)
+	if (value != NULL)
 	{
-		outcome[j + i] = value[i];
+		while (*value != '\0')
+		{
+			*current = *value;
+			current++;
+			value++;
+		}
 	}
-	j = j + i;
-
-	outcome[j] = '\0';
-
-	return (outcome);
+	*current = '\0';
+	return (result);
 }
